@@ -11,5 +11,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'new-ang-feature';
-  num: number = 0;
+  num: number = 1;
 }
