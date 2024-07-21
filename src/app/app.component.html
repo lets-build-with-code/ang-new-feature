@@ -1,28 +1,8 @@
-<input type="number" [(ngModel)]="num">
+<h3>For - Control Flow Statement</h3>
 
-@switch(num) {
- @case(1) {
-   <h1>{{num}} -> Sunday</h1>
- }
-  @case(2) {
-    <h1>{{num}} ->Monday</h1>
-  }
-  @case(3) {
-    <h1>{{num}} ->Tuesday</h1>
-  }
-  @case(4) {
-    <h1>{{num}} ->Wednesday</h1>
-  }
-  @case(5) {
-    <h1>{{num}} ->Thursday</h1>
-  }
-  @case(6) {
-    <h1>{{num}} ->Friday</h1>
-  }
-  @case(7) {
-    <h1>{{num}} ->Saturday</h1>
-  }
-  @default {
-    <h1>{{num}} is not the crosspondent number to any day.</h1>
-  }
+@for(item of items; track item.id) {
+    <li>{{item.name}}</li>
 }
+<!-- <ul *ngFor="let item of items; trackBy : trackByid">
+    <li>{{item.name}}</li>
+</ul> -->
