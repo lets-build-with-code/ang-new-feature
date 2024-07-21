@@ -11,27 +11,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ang-new-feature';
-  items = [
+   items =
+   [
     {id:1, name:"A"},
     {id:1, name:"B"},
-  ]
+    {id:1, name:"C"},
+    {id:1, name:"D"},
+  ];
 
-  ngOnInit() {
 
-    setTimeout(() => {
-      console.log({seTimeout : true});
-      this.items = [
-        {id:1, name:"A"},
-        {id:1, name:"B"},
-        {id:1, name:"C"},
-        {id:1, name:"D"},
-      ]
-    }, 5000);
-    
-  }
-  trackByid(index:any, items:any) {
-    console.log({trackBy :true,  index, items })
-    return index;
-
-  }
 }
