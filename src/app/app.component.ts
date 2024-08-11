@@ -12,13 +12,15 @@ import { DynamicComponent } from './dynamic/dynamic.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  @ViewChild('viewContainer',{read: ViewContainerRef}) viewContainer !: ViewContainerRef
 
-constructor(private viewContainerRef : ViewContainerRef) {
-  this.viewContainerRef.createComponent(DynamicComponent);
-}
+// constructor(private viewContainerRef : ViewContainerRef) {
+//   // this.viewContainerRef.createComponent(DynamicComponent);
+// }
 
 addComponent() {
-  this.viewContainerRef.createComponent(DynamicComponent);
+  // this.viewContainerRef.createComponent(DynamicComponent);
+  this.viewContainer.createComponent(DynamicComponent)
 }
 }
 
