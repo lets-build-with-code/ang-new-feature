@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ComponentRef, ElementRef, viewChild, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
+import { Component, ComponentRef, ElementRef, TemplateRef, viewChild, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { DynamicComponent } from './dynamic/dynamic.component';
@@ -12,16 +12,21 @@ import { DynamicComponent } from './dynamic/dynamic.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  @ViewChild('viewContainer',{read: ViewContainerRef}) viewContainer !: ViewContainerRef
+@ViewChild('viewContainer', {read: ViewContainerRef}) viewContainer !: ViewContainerRef;
+@ViewChild('templateContainer', {read: TemplateRef}) templateContainer !: 
+TemplateRef<any>;
 
-// constructor(private viewContainerRef : ViewContainerRef) {
-//   // this.viewContainerRef.createComponent(DynamicComponent);
-// }
 
-addComponent() {
-  // this.viewContainerRef.createComponent(DynamicComponent);
-  this.viewContainer.createComponent(DynamicComponent)
+getStudentsDetails() {
+  const students = [
+    {rollno:1, name:'sun', course:'angular'},
+    {rollno:2, name:'sam', course:'angular'},
+    {rollno:3, name:'sid', course:'java'},
+  ];
+
+  this.viewContainer.createEmbeddedView(this.templateContainer, {students})
 }
+
 }
 
 
