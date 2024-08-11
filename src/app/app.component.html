@@ -1,16 +1,4 @@
-<h3>For - Control Flow Statement - Contextual Variables ($count, $index, $first, $last, $even & $odd )</h3>
-@for(item of items; track item; 
-     let i = $index;
-     let o = $odd;
-     let e = $even;
-     let f = $first;
-     let l = $last;
-     let c = $count
-) { 
-    @if (l) {
-        <li>Idx {{i}} -  {{item.name}} - count : {{c}}</li>
-    }
-}
-@empty {
-    <li>No items found</li>
-}
+
+<h3>ViewContainerRef</h3>
+<!-- <app-dynamic></app-dynamic> -->
+<button (click)="addComponent()">Add Component Dynamically</button>

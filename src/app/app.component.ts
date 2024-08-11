@@ -1,23 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ComponentRef, ElementRef, viewChild, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { DynamicComponent } from './dynamic/dynamic.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, DynamicComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ang-new-feature';
-   items =
-   [
-    {id:1, name:"A"},
-    {id:1, name:"B"},
-    {id:1, name:"C"},
-    {id:1, name:"D"},
-  ];
 
-
+constructor(private viewContainerRef : ViewContainerRef) {
+  this.viewContainerRef.createComponent(DynamicComponent);
 }
+
+addComponent() {
+  this.viewContainerRef.createComponent(DynamicComponent);
+}
+}
+
+
