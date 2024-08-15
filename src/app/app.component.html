@@ -1,14 +1,6 @@
 
 <h3>ViewContainerRef</h3>
 <!-- <app-dynamic></app-dynamic> -->
-<button (click)="getStudentsDetails()">Get Students Details</button>
-
+<button (click)="loadComponent()">load component</button>
 
 <ng-container #viewContainer></ng-container>
-<ng-template #templateContainer let-students="students">
-    <ul *ngFor="let student of students">
-        <li>{{student.rollno}} &nbsp;&nbsp;{{student.name}} &nbsp;&nbsp; {{student.course}}</li>
-    </ul>
-</ng-template>
-<p>Bottom of the page.</p>
-<h1>Footer</h1>
