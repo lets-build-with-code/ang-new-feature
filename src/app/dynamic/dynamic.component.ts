@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dynamic.component.scss'
 })
 export class DynamicComponent {
-
+ @Input() msg:number = 0;
 }
