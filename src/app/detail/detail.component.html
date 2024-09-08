@@ -1,0 +1,23 @@
+<p>
+    Deferrable views in Angular are a powerful tool to streamline initial load times and enhance user experience.
+    Benefits of Deferrable Views
+</p>
+<p>
+    Reduced Initial Bundle Size: By deferring the loading of certain dependencies, you minimize the initial bundle size
+    of your Angular application. This leads to faster load times and improved performance.
+    Improved User Experience: Deferrable views prioritize rendering critical content while non-essential components load
+    in the background.
+    Syntax and Implementation:
+</p>
+<p>
+    Use the defer block to encapsulate content that should be lazily loaded. This content remains unrendered initially
+    and becomes visible once specified triggers or conditions are met.
+</p>
+
+<p>
+    Optionally, add a placeholder block to display temporary content before the main content loads. You can specify a
+    minimum time for the placeholder to prevent flickering.
+    Consider using the loading block to show loading indicators during deferred dependency loading.
+</p>
+
+<p>error to show the error when something went wrong.</p>

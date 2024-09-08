@@ -1,12 +1,23 @@
 
-<h3>ViewContainerRef</h3>
-@defer  {
-    <app-dynamic></app-dynamic>
-}
 
-<!-- <button (click)="loadComponent()">load component</button> -->
-
-<!-- <ng-container #viewContainer></ng-container> -->
-
-
-
+<!-- <div style="height:1200px;border:'1px solid black'">
+   <h1 style="padding:100px">First Screen</h1>
+</div> -->
+<h1 #header style="height:50px" (click)="setShow()">Deferrable Views</h1>
+    @defer(on interaction; when show)  {
+        <app-detail></app-detail>
+    }
+    @placeholder {
+        <div class="cen">
+            <img src="assets/placeholder.gif" width="75%" height="75%">
+        </div>
+    }
+    @loading {
+        <div class="cen">
+            <img src="assets/spiner.gif" width="25%" height="25%">
+            <h4>Loading</h4>
+        </div>
+    }
+    @error {
+        <h3 class="error">Something went wrong.</h3>
+    }

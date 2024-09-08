@@ -1,23 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component,ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DynamicComponent } from './dynamic/dynamic.component';
+import { DetailComponent } from './detail/detail.component';
+
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, DynamicComponent],
+  imports: [RouterOutlet, CommonModule, DetailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-@ViewChild('viewContainer', {read: ViewContainerRef}) viewContainer !: ViewContainerRef;
+show = false;
+
+setShow() {
+  this.show = true;
+}
 
 
-async ngOnInit() {
-  // const {DynamicComponent} = await import('./dynamic/dynamic.component');
-  // this.viewContainer.createComponent(DynamicComponent)
+ngOnInit() {
+  setTimeout(() => this.show = true, 5000)
 }
 
 }
